@@ -40,7 +40,7 @@ const accessLogStream = fs.createWriteStream('/tmp/access.log')
 
 app.use(helmet());
 app.use(compression());
-app.use(cors({ origin: ['https://client-asm-3.vercel.app', 'https://asm3-be.vercel.app', 'http://localhost:3000'] }));
+app.use(cors({ origin: ['https://asm3-fe-qs9i.vercel.app/', 'https://asm3-be.vercel.app', 'http://localhost:3000'] }));
 app.use(bodyParser.json());
 // app.use(cookieParser());
 app.use(morgan('combined', { stream: accessLogStream }))
