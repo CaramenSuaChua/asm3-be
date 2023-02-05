@@ -1,9 +1,9 @@
 {
     "env": {
-        "MONGO_USER": "ngodung",
-        "MONGO_PASSWORD": "ngodung3042000",
-        "MONGO_DEFAULT_DATABASE": "asm3",
+        "MONGO_USER":"ngodung1111",
+        "MONGO_PASSWORD":"ngodung3042000",
+        "MONGO_DEFAULT_DATABASE":"asm3-be",
         "SENDGRID": "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",
-        "NODE_ENV": "production"
+        "NODE_ENV": "development"
     }
 }

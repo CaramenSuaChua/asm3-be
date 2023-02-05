@@ -14,9 +14,12 @@ const helmet = require('helmet');
 const compression = require('compression');
 const morgan = require('morgan');
 const Pusher = require('pusher');
+const dotenv = require('dotenv').config();
 
-const mongodbUrl =`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@asm3.snlm58a.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority`
-console.log(process.env.SENDGRID, '-------------------')
+const mongodbUrl =`mongodb+srv://${process.env.MONGO_USER}:${
+    process.env.MONGO_PASSWORD
+}@asm3.snlm58a.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}?retryWrites=true&w=majority`;
+
 const authRoutes = require('./routes/auth');
 const productRoutes = require('./routes/product');
 const cartRoutes = require('./routes/cart');
@@ -134,6 +137,7 @@ const server = http.createServer(app);
 mongoose.set('strictQuery', true);
 mongoose.connect(mongodbUrl)
     .then(result => {
+        console.log('connected')
         server.listen(process.env.PORT || 5000);
 
         const io = require('./socket').init(server);
